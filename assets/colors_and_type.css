@@ -1,0 +1,196 @@
+/* ============================================================
+   SmartSkor Design System — Colors & Type Tokens
+   Source: smartskor-web/app/globals.css (Tailwind @theme + CSS vars)
+   ============================================================ */
+
+:root {
+  /* ---- Surfaces ---------------------------------------- */
+  --bg:        #fafafa;
+  --fg:        #111111;
+  --card:      #ffffff;
+  --card-fg:   #111111;
+  --popover:   #ffffff;
+  --popover-fg:#111111;
+  --muted:     #edf2f7;
+  --muted-fg:  #4a5568;
+  --secondary: #f7fafc;
+  --secondary-fg: #111111;
+  --accent:    #e2e8f0;
+  --accent-fg: #111111;
+  --border:    #e2e8f0;
+  --input:     #e2e8f0;
+  --ring:      #319795;
+  --focus:     rgb(29, 184, 166);
+  --nav-hover: #edf2f7;
+  --title-secondary: #6b7280;
+
+  /* ---- Brand / Primary (Teal) -------------------------- */
+  --primary:       #319795;
+  --primary-fg:    #ffffff;
+  --primary-light: #e6fffa;
+
+  /* ---- Semantic tones ---------------------------------- */
+  --success:     #38a169;  --success-fg: #ffffff;
+  --destructive: #e53e3e;  --destructive-fg: #ffffff;
+  --warning:     #d97706;  --warning-fg: #ffffff;
+  --info:        #2563eb;  --info-fg: #ffffff;
+  --favorite:    #d97706;  --favorite-fg: #ffffff;
+  --online:      #16a34a;
+
+  /* ---- Accents ----------------------------------------- */
+  --purple: #8B5CF6;
+  --orange: #DD6B20;
+
+  /* ---- SmartScore scale (1-10) — heart of the brand ---- */
+  --score-10: #056636;
+  --score-9:  #089950;
+  --score-8:  #089950;
+  --score-7:  #42bd7f;
+  --score-6:  #42bd7f;
+  --score-5:  #c1c4cd;
+  --score-4:  #f77c80;
+  --score-3:  #f23645;
+  --score-2:  #991f29;
+  --score-1:  #800000;
+
+  /* ---- Radius ------------------------------------------ */
+  --rad-sm: 0.25rem;   /* 4px  */
+  --rad-md: 0.375rem;  /* 6px  */
+  --rad-lg: 0.5rem;    /* 8px  */
+  --rad-xl: 0.75rem;   /* 12px — canonical card radius */
+
+  /* ---- Shadow (card) ----------------------------------- */
+  --shadow-card: 0 4px 20px -4px rgba(0,0,0,0.08);
+
+  /* ---- Typography (Inter) ------------------------------ */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI",
+               Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Base body — dense, tabular, financial */
+  --text-body-size: 13px;
+  --text-body-line: 1.25rem;
+
+  /* Scale (derived from in-product usage) */
+  --text-xs:   10px;  /* micro labels */
+  --text-sm:   11px;  /* eyebrow */
+  --text-base: 13px;  /* body default */
+  --text-md:   14px;  /* table cells, prose */
+  --text-lg:   16px;  /* heading */
+  --text-xl:   20px;  /* value */
+  --text-2xl:  24px;  /* hero value */
+  --text-3xl:  32px;  /* big score */
+  --text-4xl:  40px;  /* marquee score */
+
+  /* Weights actually used */
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Tracking */
+  --tracking-label:   0.06em;   /* uppercase micro label */
+  --tracking-eyebrow: 0.16em;   /* eyebrow / breadcrumb context */
+}
+
+/* Dark mode (applied via class on <html>) */
+.dark {
+  --bg:        #171923;
+  --fg:        #ffffff;
+  --card:      #1a202c;
+  --card-fg:   #ffffff;
+  --popover:   #1a202c;
+  --popover-fg:#ffffff;
+  --muted:     #4a5568;
+  --muted-fg:  #e2e8f0;
+  --secondary: #2d3748;
+  --secondary-fg: #ffffff;
+  --accent:    #2d3748;
+  --accent-fg: #ffffff;
+  --border:    #2d3748;
+  --input:     #2d3748;
+  --nav-hover: rgba(255,255,255,0.06);
+  --title-secondary: #9ca3af;
+
+  --primary:       #38b2ac;
+  --primary-light: #1d4044;
+
+  --success:     #68d391;
+  --destructive: #fc8181;
+  --warning:     #fbbf24; --warning-fg: #111111;
+  --info:        #60a5fa; --info-fg:    #111111;
+  --favorite:    #fbbf24; --favorite-fg: #111111;
+  --online:      #4ade80;
+
+  --purple: #A78BFA;
+  --orange: #F6AD55;
+
+  --shadow-card: 0 4px 20px -4px rgba(0,0,0,0.35);
+}
+
+/* ---- Semantic text classes (use these, not raw vars) ---- */
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: var(--fg);
+  background: var(--bg);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "locl" 1;
+}
+
+.ss-eyebrow {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--muted-fg);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+}
+.ss-label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--muted-fg);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+}
+.ss-value       { font-size: var(--text-xl);  font-weight: var(--weight-bold);     font-variant-numeric: tabular-nums; }
+.ss-value-hero  { font-size: var(--text-4xl); font-weight: var(--weight-bold);     font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.ss-heading     { font-size: var(--text-lg);  font-weight: var(--weight-semibold); color: var(--fg); }
+.ss-text-value  { font-size: var(--text-md);  font-weight: var(--weight-semibold); color: var(--fg); }
+.ss-prose       { font-size: var(--text-md);  font-weight: var(--weight-normal);   color: var(--muted-fg); line-height: 1.5; }
+.ss-mono        { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* ---- Card primitives ------------------------------------ */
+.ss-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--rad-xl);
+  box-shadow: var(--shadow-card);
+  padding: 1rem 1.25rem;
+  color: var(--card-fg);
+}
+.ss-card-clickable {
+  cursor: pointer;
+  transition: background-color 150ms, border-color 150ms;
+}
+.ss-card-clickable:hover {
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+  background: color-mix(in srgb, var(--fg) 2%, var(--card));
+}
+
+/* ---- Badge primitive ------------------------------------ */
+.ss-badge {
+  display: inline-block;
+  padding: 0.25rem 0.625rem;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  border-radius: 9999px;
+  border: 1px solid transparent;
+}
+.ss-badge-primary     { color: var(--primary);     background: color-mix(in srgb, var(--primary) 10%, transparent);     border-color: color-mix(in srgb, var(--primary) 30%, transparent); }
+.ss-badge-success     { color: var(--success);     background: color-mix(in srgb, var(--success) 10%, transparent);     border-color: color-mix(in srgb, var(--success) 30%, transparent); }
+.ss-badge-destructive { color: var(--destructive); background: color-mix(in srgb, var(--destructive) 10%, transparent); border-color: color-mix(in srgb, var(--destructive) 30%, transparent); }
+.ss-badge-purple      { color: var(--purple);      background: color-mix(in srgb, var(--purple) 10%, transparent);      border-color: color-mix(in srgb, var(--purple) 30%, transparent); }
+.ss-badge-muted       { color: var(--muted-fg);    background: var(--muted);  border-color: var(--muted); }
